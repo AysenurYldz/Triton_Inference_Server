@@ -100,9 +100,9 @@ python predict.py
 ```
 ## Kaynaklar
 
-Triton Inference Server: https://developer.nvidia.com/triton-inference-server
-YOLOv8: https://github.com/ultralytics
-TritonClient: https://github.com/triton-inference-server/client/blob/main/src/python/library/tritonclient/http/init.py
+- Triton Inference Server: https://developer.nvidia.com/triton-inference-server
+- YOLOv8: https://github.com/ultralytics
+- TritonClient: https://github.com/triton-inference-server/client/blob/main/src/python/library/tritonclient/http/init.py
 
 ## Notlar
 
