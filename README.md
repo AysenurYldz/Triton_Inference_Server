@@ -7,7 +7,7 @@ Bu rehber, önceden eğitilmiş bir YOLOv8 modelini kullanarak nesne algılama i
 ## Gereklilikler
 
 Python 3.6 veya üstü
-NVIDIA GPU (isteğe bağlı, CPU'da da çalışabilir)
+NVIDIA GPU
 Docker
 Ultralytics YOLOv8 kod tabanı (https://github.com/ultralytics)
 TritonClient ([https://github.com/triton-inference-server/client/blob/main/src/python/library/tritonclient/http/init.py](https://github.com/triton-inference-server))
