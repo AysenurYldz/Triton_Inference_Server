@@ -10,7 +10,7 @@ Bu rehber, önceden eğitilmiş bir YOLOv8 modelini kullanarak nesne algılama i
 - NVIDIA GPU
 - Docker
 - Ultralytics YOLOv8 kod tabanı (https://github.com/ultralytics)
-- TritonClient ([https://github.com/triton-inference-server/client/blob/main/src/python/library/tritonclient/http/init.py](https://github.com/triton-inference-server))
+- Triton Inference Server ([https://github.com/triton-inference-server/client/blob/main/src/python/library/tritonclient/http/init.py](https://github.com/triton-inference-server))
 
 ## Dosya Yapısı
 
@@ -100,9 +100,8 @@ python predict.py
 ```
 ## Kaynaklar
 
-- Triton Inference Server: https://developer.nvidia.com/triton-inference-server
+- Triton Inference Server: [https://developer.nvidia.com/triton-inference-server](https://github.com/triton-inference-server)
 - YOLOv8: https://github.com/ultralytics
-- TritonClient: https://github.com/triton-inference-server/client/blob/main/src/python/library/tritonclient/http/init.py
 
 ## Notlar
 
