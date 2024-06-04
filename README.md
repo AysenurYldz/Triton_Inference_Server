@@ -13,19 +13,35 @@ Ultralytics YOLOv8 kod tabanı (https://github.com/ultralytics)
 TritonClient (https://github.com/triton-inference-server/client/blob/main/src/python/library/tritonclient/http/init.py)
 
 ## Dosya Yapısı
-
-Bu rehberdeki dosyalar aşağıdaki gibi organize edilmiştir:
+Bu rehberdeki dosyalar, nesne algılama için Triton Inference Server ve YOLOv8 modelini kullanmanızı kolaylaştırmak için organize edilmiştir:
 
 models/:
-  yolov8_onnx/:
-    1/:
-      model.onnx: ONNX formatındaki YOLOv8 modeli
-  postprocess/:
-    1/:
-      model.py: Son işleme için kod (puan ve NMS eşikleri)
-  yolov8_ensemble/:
-    config.pbtxt: Ensemble yapılandırma dosyası (isteğe bağlı)
-predict.py: Triton Inference Server ve YOLOv8 modelini kullanarak nesne algılama için ana komut dosyası
+
+Bu klasör, YOLOv8 modeli ve ilgili dosyaları içerir.
+
+yolov8_onnx/:
+
+1/:
+model.onnx: Bu dosya, YOLOv8 modelinin ONNX formatındaki temsilini içerir. Triton Inference Server bu dosyayı modeli yüklemek ve çalıştırmak için kullanır.
+postprocess/:
+
+1/:
+model.py: Bu dosya, YOLOv8 modelinin çıkışını işleyen ve son işleme uygulayan kodu içerir. Bu, algılanan nesneler için puan ve NMS (Maksimum Olmayan Bastırma) eşiklerini belirlemeyi içerir.
+yolov8_ensemble/:
+
+config.pbtxt: Bu dosya (isteğe bağlı), birden fazla YOLOv8 modelini bir araya getiren bir ensemble modeli için yapılandırmayı tanımlar.
+predict.py:
+
+Bu ana komut dosyası, Triton Inference Server'ı başlatmak, modeli yüklemek ve bir görüntüden nesneleri algılamak için gerekli kod içerir. Ayrıca algılanan nesneleri görselleştirmek veya kaydetmek için seçenekler de sunar.
+
+Bu dosya yapısı, Triton Inference Server ve YOLOv8 modelini kullanarak nesne algılama için gerekli tüm bileşenleri organize ve erişilebilir hale getirir.
+
+Dosyalara Dahil Olanlar:
+
+model.onnx: YOLOv8 modelinin ONNX formatındaki temsili
+model.py: YOLOv8 modelinin çıkışını işleyen ve son işleme uygulayan kod
+config.pbtxt: (isteğe bağlı) Birden fazla YOLOv8 modelini bir araya getiren bir ensemble modeli için yapılandırma
+predict.py: Triton Inference Server'ı başlatan, modeli yükleyen ve görüntüden nesneleri algılayan ana komut dosyası
 
 ## Kurulum Adımları
 
