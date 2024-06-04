@@ -53,40 +53,49 @@ Bu dosya yapısı, Triton Inference Server ve YOLOv8 modelini kullanarak nesne a
 
 ## Kurulum Adımları
 
-1. Triton Server'ı İndirin ve Kurun:
-Bash
+### 1. Triton Server'ı İndirin ve Kurun
+
+```bash
 pip install triton-inference-server
-Kodu dikkatli kullanın.
-content_copy
-2. Bağımlılıkları Kurun:
-Bash
+
+
+### 2. Bağımlılıkları Kurun
+
+```bash
 pip install ultralytics==8.0.51 tritonclient[all]==2.31.0
-Kodu dikkatli kullanın.
-content_copy
-3. (İsteğe bağlı) Son İşlemeyi ve Ensemble Yapılandırmasını Özelleştirin:
-models/postprocess/1/model.py dosyasındaki puan ve NMS eşiklerini özel gereksinimlerinize göre ayarlayın.
-Farklı bir giriş çözünürlüğü kullanıyorsanız, models/yolov8_ensemble/config.pbtxt dosyasını güncelleyin.
-4. Docker Kapsayıcısını Oluşturun:
-Bash
+
+### 3. (İsteğe bağlı) Son İşlemeyi ve Ensemble Yapılandırmasını Özelleştirin
+
+- models/postprocess/1/model.py dosyasındaki puan ve NMS eşiklerini özel gereksinimlerinize göre ayarlayın.
+- Farklı bir giriş çözünürlüğü kullanıyorsanız,
+
+models/yolov8_ensemble/config.pbtxt dosyasını güncelleyin.
+
+### 4. Docker Kapsayıcısını Oluşturun
+
+```bash
+
 DOCKER_NAME="yolov8-triton"
+
+```bash
 docker build -t $DOCKER_NAME .
-Kodu dikkatli kullanın.
-content_copy
-5. Triton Inference Server'ı Çalıştırın:
-Bash
+
+### 5. Triton Inference Server'ı Çalıştırın
+
+```bash
+
 DOCKER_NAME="yolov8-triton"
 docker run --gpus all \
-  -it --rm \
-  --net=host \
-  -v ./models:/models \
-  $DOCKER_NAME
-Kodu dikkatli kullanın.
-content_copy
-6. Komutu Çalıştırın:
-Bash
+-it --rm \
+--net=host \
+-v ./models:/models \
+$DOCKER_NAME
+
+###6. Komutu Çalıştırın
+
+```bash
+
 python predict.py
-Kodu dikkatli kullanın.
-content_copy
 
 ## Kaynaklar
 
