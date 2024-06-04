@@ -57,13 +57,13 @@ Bu dosya yapısı, Triton Inference Server ve YOLOv8 modelini kullanarak nesne a
 
 ```bash
 pip install triton-inference-server
-
+```
 
 ### 2. Bağımlılıkları Kurun
 
 ```bash
 pip install ultralytics==8.0.51 tritonclient[all]==2.31.0
-
+```
 ### 3. (İsteğe bağlı) Son İşlemeyi ve Ensemble Yapılandırmasını Özelleştirin
 
 - models/postprocess/1/model.py dosyasındaki puan ve NMS eşiklerini özel gereksinimlerinize göre ayarlayın.
@@ -76,9 +76,11 @@ models/yolov8_ensemble/config.pbtxt dosyasını güncelleyin.
 ```bash
 
 DOCKER_NAME="yolov8-triton"
+```
 
 ```bash
 docker build -t $DOCKER_NAME .
+```
 
 ### 5. Triton Inference Server'ı Çalıştırın
 
@@ -90,13 +92,13 @@ docker run --gpus all \
 --net=host \
 -v ./models:/models \
 $DOCKER_NAME
-
+```
 ###6. Komutu Çalıştırın
 
 ```bash
 
 python predict.py
-
+```
 ## Kaynaklar
 
 Triton Inference Server: https://developer.nvidia.com/triton-inference-server
