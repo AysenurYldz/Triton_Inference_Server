@@ -22,18 +22,20 @@ Bu klasör, YOLOv8 modeli ve ilgili dosyaları içerir.
 
 #### yolov8_onnx/
 ##### config.pbtxt
+Birden fazla YOLOv8 modelini bir araya getiren bir ensemble modeli için yapılandırma dosyası.
 ##### 1/
 - `model.onnx`: Bu dosya, YOLOv8 modelinin ONNX formatındaki temsilini içerir. Triton Inference Server bu dosyayı modeli yüklemek ve çalıştırmak için kullanır.
-- `yolov8.pth`:
+- `yolov8.pth`:  YOLOv8 modelinin PyTorch formatındaki temsili.
 
 #### postprocess/
 ##### config.pbtxt
+ Son işleme için özel yapılandırma dosyası.
 ##### 1/
 - `model.py`: Bu dosya, YOLOv8 modelinin çıkışını işleyen ve son işleme uygulayan kodu içerir. Bu, algılanan nesneler için puan ve NMS (Maksimum Olmayan Bastırma) eşiklerini belirlemeyi içerir.
 
 #### yolov8_ensemble/
 ##### config.pbtxt: 
-Bu dosya (isteğe bağlı), birden fazla YOLOv8 modelini bir araya getiren bir ensemble modeli için yapılandırmayı tanımlar.
+Birden fazla YOLOv8 modelini bir araya getiren bir ensemble modeli için yapılandırma dosyası.
 
 ### predict.py
 
@@ -43,13 +45,11 @@ Bu ana komut dosyası, Triton Inference Server'ı başlatmak, modeli yüklemek v
 
 Bu dosya yapısı, Triton Inference Server ve YOLOv8 modelini kullanarak nesne algılama için gerekli tüm bileşenleri organize ve erişilebilir hale getirir.
 
-### Dosyalara Dahil Olanlar:
+### Notlar:
 
-- `model.onnx`: YOLOv8 modelinin ONNX formatındaki temsili
-- `model.py`: YOLOv8 modelinin çıkışını işleyen ve son işleme uygulayan kod
-- `config.pbtxt`: (isteğe bağlı) Birden fazla YOLOv8 modelini bir araya getiren bir ensemble modeli için yapılandırma
-- `predict.py`: Triton Inference Server'ı başlatan, modeli yükleyen ve görüntüden nesneleri algılayan ana komut dosyası
-
+- yolov8.pth ve config.pbtxt dosyaları, YOLOv8 modelini özelleştirmek için kullanılabilir. 
+- model.py dosyası, özel gereksinimlerinize göre uyarlanabilir. Örneğin, algılanan nesneler için farklı görselleştirmeler ekleyebilirsiniz.
+- predict.py dosyasında, görüntü dosya adı ve çıktı klasörü gibi parametreleri değiştirebilirsiniz
 
 ## Kurulum Adımları
 
