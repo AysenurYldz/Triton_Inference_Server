@@ -85,7 +85,6 @@ docker build -t $DOCKER_NAME .
 ### 5. Triton Inference Server'ı Çalıştırın
 
 ```bash
-
 DOCKER_NAME="yolov8-triton"
 docker run --gpus all \
 -it --rm \
@@ -93,10 +92,10 @@ docker run --gpus all \
 -v ./models:/models \
 $DOCKER_NAME
 ```
+
 ###6. Komutu Çalıştırın
 
 ```bash
-
 python predict.py
 ```
 ## Kaynaklar
