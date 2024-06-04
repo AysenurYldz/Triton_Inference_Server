@@ -21,17 +21,19 @@ Bu rehberdeki dosyalar, nesne algılama için Triton Inference Server ve YOLOv8 
 Bu klasör, YOLOv8 modeli ve ilgili dosyaları içerir.
 
 #### yolov8_onnx/
-
-#### 1/
+##### config.pbtxt
+##### 1/
 - `model.onnx`: Bu dosya, YOLOv8 modelinin ONNX formatındaki temsilini içerir. Triton Inference Server bu dosyayı modeli yüklemek ve çalıştırmak için kullanır.
+- `yolov8.pth`:
 
 #### postprocess/
-
+##### config.pbtxt
 ##### 1/
 - `model.py`: Bu dosya, YOLOv8 modelinin çıkışını işleyen ve son işleme uygulayan kodu içerir. Bu, algılanan nesneler için puan ve NMS (Maksimum Olmayan Bastırma) eşiklerini belirlemeyi içerir.
 
 #### yolov8_ensemble/
-- `config.pbtxt`: Bu dosya (isteğe bağlı), birden fazla YOLOv8 modelini bir araya getiren bir ensemble modeli için yapılandırmayı tanımlar.
+##### config.pbtxt: 
+Bu dosya (isteğe bağlı), birden fazla YOLOv8 modelini bir araya getiren bir ensemble modeli için yapılandırmayı tanımlar.
 
 ### predict.py
 
