@@ -13,35 +13,41 @@ Ultralytics YOLOv8 kod tabanı (https://github.com/ultralytics)
 TritonClient (https://github.com/triton-inference-server/client/blob/main/src/python/library/tritonclient/http/init.py)
 
 ## Dosya Yapısı
+
 Bu rehberdeki dosyalar, nesne algılama için Triton Inference Server ve YOLOv8 modelini kullanmanızı kolaylaştırmak için organize edilmiştir:
 
-models/:
+### models/
 
 Bu klasör, YOLOv8 modeli ve ilgili dosyaları içerir.
 
-yolov8_onnx/:
+#### yolov8_onnx/
 
-1/:
-model.onnx: Bu dosya, YOLOv8 modelinin ONNX formatındaki temsilini içerir. Triton Inference Server bu dosyayı modeli yüklemek ve çalıştırmak için kullanır.
-postprocess/:
+#### 1/
+- `model.onnx`: Bu dosya, YOLOv8 modelinin ONNX formatındaki temsilini içerir. Triton Inference Server bu dosyayı modeli yüklemek ve çalıştırmak için kullanır.
 
-1/:
-model.py: Bu dosya, YOLOv8 modelinin çıkışını işleyen ve son işleme uygulayan kodu içerir. Bu, algılanan nesneler için puan ve NMS (Maksimum Olmayan Bastırma) eşiklerini belirlemeyi içerir.
-yolov8_ensemble/:
+#### postprocess/
 
-config.pbtxt: Bu dosya (isteğe bağlı), birden fazla YOLOv8 modelini bir araya getiren bir ensemble modeli için yapılandırmayı tanımlar.
-predict.py:
+##### 1/
+- `model.py`: Bu dosya, YOLOv8 modelinin çıkışını işleyen ve son işleme uygulayan kodu içerir. Bu, algılanan nesneler için puan ve NMS (Maksimum Olmayan Bastırma) eşiklerini belirlemeyi içerir.
 
-Bu ana komut dosyası, Triton Inference Server'ı başlatmak, modeli yüklemek ve bir görüntüden nesneleri algılamak için gerekli kod içerir. Ayrıca algılanan nesneleri görselleştirmek veya kaydetmek için seçenekler de sunar.
+#### yolov8_ensemble/
+- `config.pbtxt`: Bu dosya (isteğe bağlı), birden fazla YOLOv8 modelini bir araya getiren bir ensemble modeli için yapılandırmayı tanımlar.
+
+### predict.py
+
+Bu ana komut dosyası, Triton Inference Server'ı başlatmak, modeli yüklemek ve bir görüntüden nesneleri algılamak için gerekli kodu içerir. Ayrıca algılanan nesneleri görselleştirmek veya kaydetmek için seçenekler de sunar.
+
+---
 
 Bu dosya yapısı, Triton Inference Server ve YOLOv8 modelini kullanarak nesne algılama için gerekli tüm bileşenleri organize ve erişilebilir hale getirir.
 
-Dosyalara Dahil Olanlar:
+### Dosyalara Dahil Olanlar:
 
-model.onnx: YOLOv8 modelinin ONNX formatındaki temsili
-model.py: YOLOv8 modelinin çıkışını işleyen ve son işleme uygulayan kod
-config.pbtxt: (isteğe bağlı) Birden fazla YOLOv8 modelini bir araya getiren bir ensemble modeli için yapılandırma
-predict.py: Triton Inference Server'ı başlatan, modeli yükleyen ve görüntüden nesneleri algılayan ana komut dosyası
+- `model.onnx`: YOLOv8 modelinin ONNX formatındaki temsili
+- `model.py`: YOLOv8 modelinin çıkışını işleyen ve son işleme uygulayan kod
+- `config.pbtxt`: (isteğe bağlı) Birden fazla YOLOv8 modelini bir araya getiren bir ensemble modeli için yapılandırma
+- `predict.py`: Triton Inference Server'ı başlatan, modeli yükleyen ve görüntüden nesneleri algılayan ana komut dosyası
+
 
 ## Kurulum Adımları
 
