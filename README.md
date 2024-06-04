@@ -93,7 +93,7 @@ docker run --gpus all \
 $DOCKER_NAME
 ```
 
-###6. Komutu Çalıştırın
+### 6. Komutu Çalıştırın
 
 ```bash
 python predict.py
